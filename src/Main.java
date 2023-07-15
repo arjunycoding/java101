@@ -1,31 +1,27 @@
+import java.util.Arrays;
+/**********
+ * NOTES *
+ **********/
+// String.format("hello, %s", "arjun"); --> hello arjun
+// %d  --> integers(think decimals)
+// %s --> STRINGS :)
+// System.out.print("h"); --> h
+// System.out.print("h"); --> hh
+// System.out.println("h"); --> hh \n h
 public class Main {
     public static void main(String[] args) {
-        Person arjun = new Person("Arjun", "Yuvaraj", 12);
-        arjun.printDetails();
-
-        Person dad = new Person("Dad", "", 100);
-        dad.printDetails();
-
-        Person adhithya = new Person("Adhithya", "Yuvaraj", 14);
-        adhithya.printDetails();
+        try {
+            Person arjun = new Person("Arjun", "Yuvaraj", 12, "                                                       ");
+            Person adhithya = new Person("Adhithya", "Yuvaraj", 14, "monkey");
 
 
-
-//        %d  --> integers(think decimals)
-//        %s --> STRINGS :)
-        arjun.printDetails();
-        dad.printDetails();
-        adhithya.printDetails();
-        System.out.println("Hello World!");
-
-        Person[] family = new Person[4];
-
-        for (int i = 0; i < family.length; i++){
-            family[i] = new Person(Integer.toString(i), Integer.toString(i), i);
+            arjun.printDetails();
+            adhithya.printDetails();
+            Person nullPerson = new Person(null, null, 0, "nothing");
+            nullPerson.printDetails();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
-        for (int i = 0; i < family.length; i++) {
-            family[i].printDetails();
-        }
-
     }
 }
